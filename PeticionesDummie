@@ -1,0 +1,51 @@
+package CapaDatos;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class PeticionesDummie 
+{
+	
+	//atributos
+	String name;
+	String roomName;
+	LocalDateTime inDate;
+	LocalDateTime endDate;
+	String weekDays;
+	List<List<Integer>> mascaraHoras;
+	
+	//constructor
+	public PeticionesDummie(String name, String roomName, LocalDateTime inDate, LocalDateTime endDate, String weekDays,
+			List<List<Integer>> mascaraHoras) {
+		super();
+		this.name = name;
+		this.roomName = roomName;
+		this.inDate = inDate;
+		this.endDate = endDate;
+		this.weekDays = weekDays;
+		this.mascaraHoras = mascaraHoras;
+	}
+
+    //metodos
+		public static void main (String[]args) {
+			List<PeticionesDummie> peticiones = new ArrayList <>();
+			peticiones.add(new PeticionesDummie("java", "sala2", LocalDateTime.of(1994,  9, 23,0,0),LocalDateTime.of(2023, 11,1,0,0), "W",Arrays.asList(Arrays.asList(10,12), Arrays.asList(18,22))));
+			peticiones.add(new PeticionesDummie("c", "sala2", LocalDateTime.of(2023,8,2,0,0),LocalDateTime.of(2023,8,3,0,0), "MTF",Arrays.asList(Arrays.asList(11,13),Arrays.asList(17,21))));
+			peticiones.add(new PeticionesDummie("java", "sala1",LocalDateTime.of(2023,5,20,0,0 ),LocalDateTime.of(2023,6,25,0,0),"MWH",Arrays.asList(Arrays.asList(9, 12),Arrays.asList(14, 16))));
+			peticiones.add(new PeticionesDummie("C", "sala1", LocalDateTime.of(2023, 6,4,0,0),LocalDateTime.of(2023,6,12,0,0),"MTW",Arrays.asList(Arrays.asList(12,15),Arrays.asList(16,21))));
+			peticiones.add(new PeticionesDummie("java", "sala2", LocalDateTime.of(2023, 3,1,0,0),LocalDateTime.of(2023,4,29,0,0),"HF",Arrays.asList(Arrays.asList(9,12),Arrays.asList(17, 21))));
+			
+			
+			
+			
+	
+		
+		}
+	
+    
+    
+     
+}
+    
