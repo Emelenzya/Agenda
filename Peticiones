@@ -1,0 +1,27 @@
+import java.util.List;
+
+/**
+ * Clase Peticiones gestiona una lista de reservaciones.
+ */
+public class Peticiones {
+    private List<Reservation> reservations;
+
+    /**
+     * Constructor que inicializa la lista de reservaciones.
+     *
+     * @param reservations Lista de objetos Reservation.
+     */
+    public Peticiones(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    /**
+     * Devuelve la lista de reservaciones.
+     *
+     * @return Lista de reservaciones.
+     */
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+}
+
