@@ -1,0 +1,32 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+
+/**
+ * Clase ConfiguracionParser se encarga de parsear el archivo de configuración.
+ */
+public class ConfiguracionParser {
+    private static final String CONFIG_FILE = "config.txt";
+
+    /**
+     * Parsea el archivo de configuración para crear un objeto Configuracion.
+     *
+     * @return Objeto Configuracion basado en los datos del archivo.
+     */
+    public Configuracion parseConfiguracion() {
+        try (Stream<String> stream = Files.lines(Paths.get(CONFIG_FILE))) {
+            String[] configValues = stream.limit(3).toArray(String[]::new);
+            if (configValues.length < 3) {
+                throw new IllegalArgumentException("Archivo de configuración incompleto o corrupto");
+            }
+            int year = Integer.parseInt(configValues[0].trim());
+            int month = Integer.parseInt(configValues[1].trim());
+            String[] languages = configValues[2].trim().split("\\s+");
+            return new Configuracion(year, month, languages[0], languages[1]);
+        } catch (IOException | NumberFormatException e) {
+            throw new RuntimeException("Fallo al cargar la configuración: " + e.getMessage(), e);
+        }
+    }
+}
+
