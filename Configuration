@@ -1,0 +1,32 @@
+/**
+ * Clase Configuracion almacena los parámetros de configuración del sistema
+ * que son leídos desde el archivo de configuración.
+ */
+public class Configuracion {
+    private int year;
+    private int month;
+    private String inputLanguage;
+    private String outputLanguage;
+
+    /**
+     * Constructor para inicializar la configuración.
+     *
+     * @param year Año de la configuración.
+     * @param month Mes de la configuración.
+     * @param inputLanguage Idioma de entrada del sistema.
+     * @param outputLanguage Idioma de salida del sistema.
+     */
+    public Configuracion(int year, int month, String inputLanguage, String outputLanguage) {
+        this.year = year;
+        this.month = month;
+        this.inputLanguage = inputLanguage;
+        this.outputLanguage = outputLanguage;
+    }
+
+    // Getters
+    public int getYear() { return year; }
+    public int getMonth() { return month; }
+    public String getInputLanguage() { return inputLanguage; }
+    public String getOutputLanguage() { return outputLanguage; }
+}
+
